@@ -1,0 +1,7 @@
+pro zobrazení aplikace je potřeba spustit:
+npm run start
+nebo později:
+npm run buld
+
+http://localhost:3000
+http://192.168.0.13:3000
