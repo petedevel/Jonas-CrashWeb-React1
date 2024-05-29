@@ -51,7 +51,7 @@ function Counter(){
     //btn.addEventListener('click', function()...)
     //V React přidáme událost onClick=....
 
-    /* jen pokus jak to funguje - useState je 2.prvkové pole - hodnota, funkce
+    /* jen pokus jak to funguje - useState je 2.prvkové pole - hodnota, volání funkce
     const x = useState(0);
     console.log(x);*/
 
@@ -67,22 +67,28 @@ function Counter(){
 }
 
 function App(){
+    // Define State variable
+    const [showForm, setShowForm] = useState(false);
+
     const appTitle = "Today I Learned"
 
     return (
         <>
-        {/* HEADER */}
+            {/* HEADER */}
             <header className="header">
                 <div className="logo">
                     <img src="logo.png" height="68" width="68" alt="Today I Learned Logo" />
                     <h1>{appTitle}</h1>
                 </div>
-
-                <button className="btn btn-large btn-open">Share a fact</button>
+                {/* 3. Update State variable */}
+                {/* <button className="btn btn-large btn-open" onClick={()=>setShowForm(!showForm)}> */}
+                <button className="btn btn-large btn-open" onClick={()=>setShowForm((show)=>!show)}>
+                    Share a fact
+                </button>
             </header>
-
-            <Counter />
-            <NewFactForm />
+            {/* 2. Used State variable */}
+            {/* <Counter /> */}
+            {showForm? <NewFactForm /> : null}
             
             <main className="main">
                 <CategoryFilter />
