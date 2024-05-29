@@ -51,12 +51,18 @@ function Counter(){
     //btn.addEventListener('click', function()...)
     //V React přidáme událost onClick=....
 
+    /* jen pokus jak to funguje - useState je 2.prvkové pole - hodnota, funkce
     const x = useState(0);
-    console.log(x);
+    console.log(x);*/
+
+    //do count se načte hodnota z useStage a setCount je funkce, která mění count
+    const [count, setCount] = useState(0);
+    //console.log(count);
 
     return <div>
-        <span style={{fontSize: '40px'}}>8</span>
-        <button className="btn btn-large" onClick={()=> console.log("Click")}>+1</button>
+        <span style={{fontSize: '40px'}}>{count}</span>
+        {/* <button className="btn btn-large" onClick={()=> setCount(count+1)}>+1</button> */}
+        <button className="btn btn-large" onClick={()=> setCount(c => c+1)}>+1</button>
     </div>
 }
 
