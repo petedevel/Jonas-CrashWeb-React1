@@ -1,3 +1,4 @@
+import {useState} from "react";
 import "./style.css";
 
 const CATEGORIES = [
@@ -45,6 +46,20 @@ const CATEGORIES = [
     },
   ];
 
+function Counter(){
+    //V čistém JS bychom na aktivaci tlačítka:
+    //btn.addEventListener('click', function()...)
+    //V React přidáme událost onClick=....
+
+    const x = useState(0);
+    console.log(x);
+
+    return <div>
+        <span style={{fontSize: '40px'}}>8</span>
+        <button className="btn btn-large" onClick={()=> console.log("Click")}>+1</button>
+    </div>
+}
+
 function App(){
     const appTitle = "Today I Learned"
 
@@ -59,7 +74,10 @@ function App(){
 
                 <button className="btn btn-large btn-open">Share a fact</button>
             </header>
+
+            <Counter />
             <NewFactForm />
+            
             <main className="main">
                 <CategoryFilter />
                 <FactList />
