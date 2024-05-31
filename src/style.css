@@ -12,6 +12,13 @@ body {
 .hidden {
     display: none !important;
 }
+.message {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 600;
+    
+}
 
 /* Main Layout */
 /* .container {
